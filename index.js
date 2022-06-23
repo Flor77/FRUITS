@@ -14,13 +14,12 @@ let createElements = () => {
   holder.className = 'holder';
   container.appendChild(holder);
 
-  for (let i=0; i < fruitsArray.length; i++){
+  fruitsArray.map((fruit, i)=>{
     let li = document.createElement('li');
     li.className = 'li'
 
     holder.appendChild(li);
-    let index = fruitsArray.indexOf(fruitsArray[i]) + 1;
-    li.innerHTML=li.innerHTML + index + '. '  + fruitsArray[i];
-  }
+    li.innerHTML= `${i+1}. ${fruitsArray[i]}`;
+  })
 }
 createElements();
